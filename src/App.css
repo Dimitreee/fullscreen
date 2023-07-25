@@ -1,38 +1,44 @@
-.App {
+img {
+  display: block;
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+img:fullscreen {
+  background: url(https://source.unsplash.com/600x400/?iran) 0 0/40px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 100%/1.7 system-ui;
+  background-color: #1b1b1b;
+  color: #eee;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  font-family: inherit;
+  display: inline-block;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  user-select: none;
+  border: 1px solid #007bff;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
 }
