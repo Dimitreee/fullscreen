@@ -5,92 +5,60 @@
   <meta charset="UTF-8" />
   <title>HTML5 Full-Screen Demonstration</title>
   <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-
-    html, body
-    {
-      height: 100%;
-      font-family: "Segoe UI", arial, helvetica, freesans, sans-serif;
-      color: #333;
-      background-color: #fff;
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-
     body {
-      margin: 10px;
+      font-size: calc(100% + .25vw);
+      line-height: 1.4em;
     }
 
-    p {
-      margin: 0 0 1em 0;
-    }
-
-    figure {
-      position: relative;
-      display: block;
-      width: 30%;
-      float: right;
-      padding: 0;
-      margin: 1em;
-      cursor: pointer;
-    }
-
-    figure img {
-      display: block;
+    main {
       max-width: 100%;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      cursor: pointer;
+      margin: 0 auto;
     }
 
-    figure:-moz-full-screen img {
-      position: fixed;
+    article {
+      max-width: 85%;
     }
 
-    figure:-ms-fullscreen {
-      width: auto;
+    h2 {
+      font-size: 1.6em;
+      line-height: 1;
+      writing-mode: vertical-rl;
+      float: left;
+      max-height: 500px;
     }
 
-    figure:-ms-fullscreen img {
-      position: fixed;
-    }
-
-    figure:fullscreen img {
-      position: fixed;
+    @media all and (min-width: 40rem) {
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+      }
+      article {
+        max-width: 35rem;
+        padding-left: 5rem;
+      }
+      h2 {
+        font-size: 2.6em;
+        margin-left: -2.6rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>HTML5 Full-Screen Demonstration</h1>
-</header>
-
-<article>
-
-  <figure id="myimage">
-    <img src="https://source.unsplash.com/600x400/?iran" alt="a squirrel" />
-  </figure>
-
-  <p>This demonstration illustrates how to use the HTML5 full-screen API which has been implemented in IE11, Firefox, Chrome, Opera and Safari. Click the image to toggle full-screen view.</p>
-
-  <p>For further information, please refer to the article <a href="http://www.sitepoint.com/html5-full-screen-api-revisited/"><strong>How to Use the HTML5 Full-Screen API (Again)</strong></a>&hellip;</p>
-
-  <p>This example code was developed by <a href="http://twitter.com/craigbuckler">Craig Buckler</a> of <a href="http://optimalworks.net/">OptimalWorks.net</a> for <a href="http://sitepoint.com/">SitePoint.com</a>.</p>
-
-  <p>Please view the source and use this code as you wish. A link back to the article is appreciated.</p>
-
-</article>
+<main>
+  <article>
+    <h2>HTML5 Full-Screen Demonstration</h2>
+    <p>This demonstration illustrates how to use the HTML5 full-screen API which has been implemented in IE11, Firefox, Chrome, Opera and Safari. Click the image to toggle full-screen view.</p>
+    <p>For further information, please refer to the article <a href="http://www.sitepoint.com/html5-full-screen-api-revisited/"><strong>How to Use the HTML5 Full-Screen API (Again)</strong></a>&hellip;</p>
+    <p>This example code was developed by <a href="http://twitter.com/craigbuckler">Craig Buckler</a> of <a href="http://optimalworks.net/">OptimalWorks.net</a> for <a href="http://sitepoint.com/">SitePoint.com</a>.</p>
+    <p>Please view the source and use this code as you wish. A link back to the article is appreciated.</p>
+    <figure id="myimage">
+      <img src="https://source.unsplash.com/600x400/?iran" alt="a squirrel" />
+    </figure>
+  </article>
+</main>
 
 <script>
-
-
   // full-screen available?
   if (
           document.fullscreenEnabled ||
@@ -98,13 +66,11 @@
           document.mozFullScreenEnabled ||
           document.msFullscreenEnabled
   ) {
-
     // image container
     var i = document.getElementById("myimage");
 
     // click event handler
     i.onclick = function() {
-
       // in full-screen?
       if (
               document.fullscreenElement ||
@@ -112,7 +78,6 @@
               document.mozFullScreenElement ||
               document.msFullscreenElement
       ) {
-
         // exit full-screen
         if (document.exitFullscreen) {
           document.exitFullscreen();
@@ -123,10 +88,7 @@
         } else if (document.msExitFullscreen) {
           document.msExitFullscreen();
         }
-
-      }
-      else {
-
+      } else {
         // go full-screen
         if (i.requestFullscreen) {
           this.requestFullscreen();
@@ -137,11 +99,8 @@
         } else if (i.msRequestFullscreen) {
           i.msRequestFullscreen();
         }
-
       }
-
     }
-
   }
 </script>
 
